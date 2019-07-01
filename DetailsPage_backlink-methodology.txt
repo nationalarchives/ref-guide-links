@@ -1,0 +1,159 @@
+
+e.g. https://discovery.nationalarchives.gov.uk/details/r/C513627
+
+
+1.
+Get the reference from the page - there are potentially 7 places that it might appear (snippets below). One of these must be consistently present?
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+
+            <meta name="DCSext.docref" content="ADM 104/140">
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+
+            <meta name="WT.pn_sku" content="ADM 104/140">
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+
+            <ul>
+                <li><a href="https://www.nationalarchives.gov.uk">Home</a></li>
+                <li><a href="/" class="breadcrumbs">Discovery</a></li>
+                <li><a class="breadcrumbs" href="https://discovery.nationalarchives.gov.uk/results/r?_q=ADM+104%2F140">Your search results</a>ADM 104/140</li>
+            </ul>
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+
+  <table class="asset-details">
+    <caption>Details of ADM 104/140</caption>
+    <tbody>
+            <tr>
+                <th scope="row">Reference:</th>
+                <td>
+                    ADM 104/140
+                </td>
+            </tr>
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+
+
+        <input id="DocReference" name="DocReference" type="hidden" value="ADM 104/140" />
+        <input id="ID" name="ID" type="hidden" value="C513627" />
+    </div>
+</form>
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+
+<form action="/Details/TagRemovalRequest" id="tag-removal-request-form" method="post">    <div id="report-tag" class="report-tag not-available" aria-expanded="false">
+        <fieldset>
+            <legend id="tagNameLabel">Request removal of tag '<span class="tagToBeRemoved"></span>'</legend>
+
+            <input data-val="true" data-val-required="This field is required" id="tagId" name="tagId" type="hidden" value="" />
+            <input data-val="true" data-val-required="This field is required" id="tagValue" name="tagValue" type="hidden" value="" />
+            <input data-val="true" data-val-required="This field is required" id="sourceIaid" name="sourceIaid" type="hidden" value="C513627" />
+            <input id="reference" name="reference" type="hidden" value="ADM 104/140" />
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------- //
+
+
+
+2.
+Split the reference, e.g. "ADM 104/140", into three variables, as follows:
+
+varLettercode	Everything before the first space (if present)		e.g. 'ADM'
+varSeries	Everything before the first slash (if present)		e.g. 'ADM 104'
+varAll		Everything						e.g. 'ADM 104/140'
+
+
+
+3.
+Pseudo-code logic thereafter is as follows:
+
+
+Search the first level of the JSON file for varLettercode 'ADM'
+
+If varLettercode 'ADM' not found												// NO LETTERCODE - NO CHILDREN
+
+	Exit																						// EXIT
+
+ElsIf the 'guides' section of varLettercode 'ADM' exists									// LETTERCODE + GUIDES
+
+	If varLettercode == varAll												// LETTERCODE + GUIDES - NO CHILDREN (by default)
+
+		Format & display the contents of the 'guides' section of varLettercode [eg.'ADM'], and Exit										// EXIT
+
+	Else
+		Search the 'records' section of varLettercode [eg.'ADM'] for varSeries [eg.'ADM 104']				// LETTERCODE + GUIDES + CHILDREN (by default)
+
+		If varSeries [eg.'ADM 104'] not found										// NO SERIES - NO CHILDREN
+
+			Format & display the contents of the 'guides' section of varLettercode [eg.'ADM'], and Exit									// EXIT
+
+		ElsIf the 'guides' section of varSeries [eg.'ADM 104'] exists							// SERIES + GUIDES
+
+			If varSeries == varAll											// SERIES + GUIDES - NO CHILDREN (by default)
+
+				Format & display the contents of the 'guides' section of varSeries [eg.'ADM 104'], and Exit								// EXIT
+
+			Else
+				Search the 'records' section of varSeries [eg.'ADM 104'] for varAll 'ADM 104/140'		// SERIES + GUIDES + CHILDREN (by default)
+
+				If varAll 'ADM 104/140' not found								// SERIES + GUIDES - NO CHILDREN
+
+					Format & display the contents of the 'guides' section of varSeries [eg.'ADM 104'], and Exit							// EXIT
+
+				Else												// SERIES + GUIDES + CHILDREN
+					Format & display the contents of the 'guides' section of varAll [eg.'ADM 104/140'], and Exit
+
+		ElsIf varSeries == varAll											// SERIES - NO GUIDES - NO CHILDREN (by default)
+
+			Format & display the contents of the 'guides' section of varLettercode [eg.'ADM'], and Exit									// EXIT
+		Else
+			Search the 'records' section of varSeries [eg.'ADM 104'] for varAll [eg.'ADM 104/140']			// SERIES - NO GUIDES + CHILDREN (by default)
+
+			If varAll [eg.'ADM 104/140'] not found									// SERIES - NO GUIDES - NO CHILDREN
+
+				Format & display the contents of the 'guides' section of varLettercode [eg.'ADM'], and Exit								// EXIT
+			Else													// SERIES - NO GUIDES + CHILDREN
+				Format & display the contents of the 'guides' section of varAll [eg.'ADM 104/140'], and Exit								// EXIT
+
+Else
+	Search the 'records' section of varLettercode [eg.'ADM'] for varSeries [eg.'ADM 104']					// LETTERCODE + RECORDS + CHILDREN (by default)
+
+	If varSeries [eg.'ADM 104'] not found											// NO SERIES - NO CHILDREN
+
+		Exit																					// EXIT
+
+	ElsIf the 'guides' section of varSeries [eg.'ADM 104'] exists								// SERIES + GUIDES
+
+		If varSeries == varAll												// SERIES + GUIDES - NO CHILDREN (by default)
+
+			Format & display the contents of the 'guides' section of varSeries [eg.'ADM 104'], and Exit									// EXIT
+
+		Else
+			Search the 'records' section of varSeries [eg.'ADM 104'] for varAll [eg.'ADM 104/140']			// SERIES + GUIDES + CHILDREN (by default)
+
+			If varAll [eg.'ADM 104/140'] not found									// SERIES + GUIDES - NO CHILDREN
+
+				Format & display the contents of the 'guides' section of varSeries [eg.'ADM 104'], and Exit								// EXIT
+
+			Else													// SERIES + GUIDES + CHILDREN
+				Format & display the contents of the 'guides' section of varAll [eg.'ADM 104/140'], and Exit
+
+	ElsIf varSeries == varAll												// SERIES - NO GUIDES - NO CHILDREN (by default)
+
+		Exit																					// EXIT
+	Else
+		Search the 'records' section of varSeries [eg.'ADM 104'] for varAll [eg.'ADM 104/140']				// SERIES - NO GUIDES + CHILDREN (by default)
+
+		If varAll [eg.'ADM 104/140'] not found										// SERIES - NO GUIDES - NO CHILDREN
+
+			Exit																				// EXIT
+		Else														// SERIES - NO GUIDES + CHILDREN
+			Format & display the contents of the 'guides' section of varAll [eg.'ADM 104/140'], and Exit									// EXIT
+
