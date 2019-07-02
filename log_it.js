@@ -2,7 +2,7 @@ module.exports = log_it = (key, data) => {
 
     if (key !== false && data !== false) {
 
-        const message = `${key} has ${Object.values(data.guides).length} guides`;
+        const message = `${key} has ${Object.values(data.guides).length} guide` + (Object.values(data.guides).length > 1 ? 's' : '');
 
         let padding = '---';
 
