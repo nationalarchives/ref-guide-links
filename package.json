@@ -1,0 +1,20 @@
+{
+  "name": "ref-guide-links",
+  "version": "1.0.0",
+  "description": "Repository exploring ways to link references and research guides. Previous (somewhat related) work can be found in:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nationalarchives/ref-guide-links.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nationalarchives/ref-guide-links/issues"
+  },
+  "homepage": "https://github.com/nationalarchives/ref-guide-links#readme"
+}
