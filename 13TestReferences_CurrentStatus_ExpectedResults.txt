@@ -1,0 +1,19 @@
+const test_reference = 'AB';           //    lettercode guide(s)                                                      OK  [lettercode: 1. Contaminated land]
+
+const test_reference = 'AB 7';         //    lettercode guide(s);    series guide(s)                          PART ERROR                                                                                                       [series: 1. Photographs]               [lettercode: 1. Contaminated land]
+const test_reference = 'J 89/13/1';    //    lettercode guide(s);    series guide(s);    piece/item guide(s)          OK  [piece/item: 1. Court of King's Bench (Plea Side) and King's/Queen's Bench Division cases 1702-1998] [series: 1. Chancery cases after 1875] [lettercode: 1. Chancery equity suits 1558-1875, 2. Sexuality and gender identity history]
+const test_reference = 'AB 5/5';       //    lettercode guide(s);    series guide(s); NO piece/item guide(s)  PART ERROR  [piece/item: 0]                                                                                      [series: 1. Architectural drawings]    [lettercode: 1. Contaminated land]
+
+const test_reference = 'AB 6';         //    lettercode guide(s); NO series guide(s)                                  OK                                                             [series: 0] [lettercode: 1. Contaminated land]
+const test_reference = 'AO 14/37';     //    lettercode guide(s); NO series guide(s);    piece/item guide(s)  PART ERROR  [piece/item: 1. British transatlantic slave trade records] [series: 0] [lettercode: 1. Catholics]
+const test_reference = 'BW 1/1';       //    lettercode guide(s); NO series guide(s); NO piece/item guide(s)  PART ERROR  [piece/item: 0]                                            [series: 0] [lettercode: 1. Propaganda]
+
+const test_reference = 'AX 14';        // NO lettercode guide(s);    series guide(s)                          FULL ERROR                                                  [series: 1. Government datasets]                                                                                                   [lettercode: 0]
+const test_reference = 'CHAR 13/483';  // NO lettercode guide(s);    series guide(s);    piece/item guide(s)  FULL ERROR  [piece/item: 1. Elementary and primary schools] [series: 1. Elementary and primary schools, 2. Land and property for charitable use: trust deeds, 1736-1963, 3. Secondary schools] [lettercode: 0]
+const test_reference = 'CHAR 13/13';   // NO lettercode guide(s);    series guide(s); NO piece/item guide(s)  FULL ERROR  [piece/item: 0]                                 [series: 1. Elementary and primary schools, 2. Land and property for charitable use: trust deeds, 1736-1963, 3. Secondary schools] [lettercode: 0]
+
+const test_reference = 'ACT 1';        // NO lettercode guide(s); NO series guide(s)                          FULL ERROR                                            [series: 0] [lettercode: 0]
+const test_reference = 'ACT 1/632';    // NO lettercode guide(s); NO series guide(s);    piece/item guide(s)  FULL ERROR  [piece/item: 1. Companies and businesses] [series: 0] [lettercode: 0]
+const test_reference = 'LEV 1/1';      // NO lettercode guide(s); NO series guide(s); NO piece/item guide(s)          OK  [piece/item: 0]                           [series: 0] [lettercode: 0]
+
+

@@ -66,9 +66,12 @@ Get the reference from the page - there are potentially 7 places that it might a
 Split the reference, e.g. "ADM 104/140", into three variables, as follows:
 
 varLettercode	Everything before the first space (if present)		e.g. 'ADM'
-varSeries	Everything before the first slash (if present)		e.g. 'ADM 104'
+varSeries	Everything before the first slash (if present)*		e.g. 'ADM 104'
 varAll		Everything						e.g. 'ADM 104/140'
 
+*
+There are 20 legacy "sub-class" series in the 3 lettercodes CP, IR, PRO - they are identifiable with the (Perl-style) regex: /^(CP 2[456]\/|IR (12[14-9]|13[0-5])\/|PRO (3[01]|41|66)\/)/
+If any reference within these 3 lettercodes (CP, IR, PRO) matches this regex, then the splitting of the reference into separate variables should hinge on the SECOND slash (not the first slash as all other references).
 
 
 3.
