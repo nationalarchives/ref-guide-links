@@ -11,3 +11,7 @@ Clone the repository and ensure you have Node.js installed. Having done this run
 ### Testing
 
 From the project root type `mocha` to run the tests contained in the `test` directory
+
+### Running the code
+
+Type `node app.js` to run the code. To try different references change the `test_reference` variable in `app.js`
