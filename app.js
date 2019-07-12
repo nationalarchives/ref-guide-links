@@ -4,7 +4,7 @@ const get_variables = require('./get_variables');
 const extract_relevant_section = require('./extract_relevant_section');
 const extract_letter_code_section = require('./extract_letter_code_section');
 
-const test_reference = 'ADM 137/3064';
+const test_reference = 'WO 185/8';
 const { letter_code, series, reference } = get_variables(test_reference);
 const extracted_guides = {};
 
