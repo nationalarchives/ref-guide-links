@@ -16,7 +16,7 @@ let results = {
     guides_for_reference: get_guides_for_reference(letter_code, series, reference, data)
 };
 
-log_it(results);
+log_it(results, test_reference, get_variables(test_reference));
 
 
 
