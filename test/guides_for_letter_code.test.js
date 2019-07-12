@@ -34,6 +34,21 @@ describe('It should return the correct guides', function () {
                     "second-world-war": "Second World War",
                     "wars-overview": "Wars: an overview"
                 }
+            },
+            {
+                letter_code: 'J',
+                guides: {
+                    "chancery-equity-suits-after-1558":"Chancery equity suits 1558-1875",
+                    "gay-lesbian-history":"Sexuality and gender identity history"
+                }
+            },
+            {
+                letter_code: 'AX',
+                guides: {}
+            },
+            {
+                letter_code: 'ACT',
+                guides: {}
             }
         ];
 
