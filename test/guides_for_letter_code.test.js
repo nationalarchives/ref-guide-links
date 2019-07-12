@@ -49,6 +49,26 @@ describe('It should return the correct guides', function () {
             {
                 letter_code: 'ACT',
                 guides: {}
+            },
+            {
+                letter_code: 'AO',
+                guides: {
+                    "catholics":"Catholics"
+                }
+            },
+            {
+                letter_code: 'BW',
+                guides: {
+                    "propaganda":"Propaganda"
+                }
+            },
+            {
+                letter_code: 'CHAR',
+                guides: {}
+            },
+            {
+                letter_code: 'LEV',
+                guides: {}
             }
         ];
 

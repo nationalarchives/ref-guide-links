@@ -1,11 +1,24 @@
 const data = require('./data/refs-in-guides-back-linked-full');
+
 const get_variables = require('./get_variables');
 const get_guides_for_letter_code = require('./get_guides_for_letter_code');
+const get_guides_for_series = require('./get_guides_for_series');
+const get_guides_for_reference = require('./get_guides_for_reference');
 
-const test_reference = 'AB';
+const log_it  = require('./utilities/log_it');
+
+const test_reference = 'ADM 140/140';
 const { letter_code, series, reference } = get_variables(test_reference);
 
-console.log(get_guides_for_letter_code(letter_code, data));
+let results = {
+    guides_for_letter_code: get_guides_for_letter_code(letter_code, data),
+    guides_for_series: get_guides_for_series(letter_code, series, data),
+    guides_for_reference: get_guides_for_reference(letter_code, series, reference, data)
+};
+
+log_it(results);
+
+
 
 
 
