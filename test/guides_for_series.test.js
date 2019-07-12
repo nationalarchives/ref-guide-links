@@ -18,6 +18,13 @@ describe('It should return the correct guides', function () {
             },
             {
                 letter_code: 'AB',
+                series: 'AB 5',
+                guides: {
+                    "architectural-drawings": "Architectural drawings"
+                }
+            },
+            {
+                letter_code: 'AB',
                 series: 'AB 6',
                 guides: {}
             },
@@ -38,6 +45,30 @@ describe('It should return the correct guides', function () {
             {
                 letter_code: 'ACT',
                 series: 'ACT 1',
+                guides: {}
+            },
+            {
+                letter_code: 'AO',
+                series: 'AO 14',
+                guides: {}
+            },
+            {
+                letter_code: 'BW',
+                series: 'BW 1',
+                guides: {}
+            },
+            {
+                letter_code: 'CHAR',
+                series: 'CHAR 13',
+                guides: {
+                    "elementary-primary-schools": "Elementary and primary schools",
+                    "conveyances-of-land-charitable-uses-trust-deeds-1736-1963": "Land and property for charitable use: trust deeds, 1736-1963",
+                    "secondary-schools": "Secondary schools"
+                }
+            },
+            {
+                letter_code: 'LEV',
+                series: 'LEV 1',
                 guides: {}
             }
         ];

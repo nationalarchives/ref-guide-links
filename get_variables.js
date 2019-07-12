@@ -5,10 +5,8 @@ const extract_vars_from_legacy_subclass_series = require('./extract_vars_from_le
 module.exports = get_variables = (reference) => {
 
     if (is_legacy_sub_class_series(reference)) {
-        console.log(`${reference} is a legacy sub-class series`);
-        return extract_vars_from_legacy_subclass_series(reference);
+        const result = extract_vars_from_legacy_subclass_series(reference);
     }
 
-    console.log(`${reference} is a standard series`);
     return extract_vars_from_standard_series(reference);
 };
