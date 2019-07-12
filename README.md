@@ -10,7 +10,7 @@ Clone the repository and ensure you have Node.js installed. Having done this run
 
 ### Testing
 
-From the project root type `mocha` to run the tests contained in the `test` directory
+Having installed the mocha test framework globally with `npm i -g mocha` you can run tests from the project root by typing `mocha`. Tests are contained in the `test` directory
 
 ### Running the code
 
