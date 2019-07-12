@@ -3,7 +3,7 @@ const get_variables = require('../get_variables');
 
 
 describe('The variables should be extracted correctly from', function () {
-    describe('Simple references', function () {
+    describe('simple references', function () {
 
         const simple_references = [
             { reference: "ADM 104/140", expected_letter_code: "ADM", expected_series: "ADM 104" }

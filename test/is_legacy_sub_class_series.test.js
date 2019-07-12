@@ -2,9 +2,9 @@ const assert = require('assert');
 const is_legacy_sub_class_series = require('../is_legacy_sub_class_series');
 
 
-describe('Identifying legacy sub-classes', function () {
+describe('In order to correctly parse reference types', function () {
 
-    describe('Legacy sub-classes should be identified correctly', function () {
+    describe('"legacy sub-classes" should be identified correctly', function () {
 
         const legacy_sub_class_series = ['CP 25/', 'IR 130/', 'CP 25/2/6/8'];
 
