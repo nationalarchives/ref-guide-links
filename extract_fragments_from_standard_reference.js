@@ -1,4 +1,4 @@
-module.exports = extract_from_standard_reference = (reference) => {
+module.exports = extract_fragments_from_standard_reference = (reference) => {
 
     let letter_code_match = reference.match(/^\w*$/) ? reference.match(/^\w*$/) : reference.match(/\w*?(?=\s)/);
     let series_match = reference.match(/\w+\s\d+/);

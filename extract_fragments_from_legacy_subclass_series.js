@@ -1,4 +1,4 @@
-module.exports = extract_from_legacy_sub_class_series = (reference) => {
+module.exports = extract_fragments_from_legacy_sub_class_series = (reference) => {
 
     // TODO: This is just a stub. The actual functionality needs to be returned;
 
