@@ -1,7 +1,6 @@
 const assert = require('assert');
 const get_fragments = require('../get_fragments');
 
-
 describe('The fragments should be extracted correctly from', function () {
     describe('simple references', function () {
 

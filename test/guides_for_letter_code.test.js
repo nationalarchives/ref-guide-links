@@ -38,8 +38,8 @@ describe('It should return the correct guides', function () {
             {
                 letter_code: 'J',
                 guides: {
-                    "chancery-equity-suits-after-1558":"Chancery equity suits 1558-1875",
-                    "gay-lesbian-history":"Sexuality and gender identity history"
+                    "chancery-equity-suits-after-1558": "Chancery equity suits 1558-1875",
+                    "gay-lesbian-history": "Sexuality and gender identity history"
                 }
             },
             {
@@ -53,13 +53,13 @@ describe('It should return the correct guides', function () {
             {
                 letter_code: 'AO',
                 guides: {
-                    "catholics":"Catholics"
+                    "catholics": "Catholics"
                 }
             },
             {
                 letter_code: 'BW',
                 guides: {
-                    "propaganda":"Propaganda"
+                    "propaganda": "Propaganda"
                 }
             },
             {
@@ -68,6 +68,20 @@ describe('It should return the correct guides', function () {
             },
             {
                 letter_code: 'LEV',
+                guides: {}
+            },
+            {
+                letter_code: 'CP',
+                guides: {}
+            },
+            {
+                letter_code: 'IR',
+                guides: {
+                    "taxation": "Taxation"
+                }
+            },
+            {
+                letter_code: 'PRO',
                 guides: {}
             }
         ];

@@ -7,7 +7,7 @@ const get_guides_for_reference = require('./get_guides_for_reference');
 
 const log_it  = require('./utilities/log_it');
 
-const test_reference = 'ADM 1/24575';
+const test_reference = 'PRO 31/8/140B';
 const { letter_code, series, reference } = get_fragments(test_reference);
 
 let results = {

@@ -70,6 +70,39 @@ describe('It should return the correct guides', function () {
                 letter_code: 'LEV',
                 series: 'LEV 1',
                 guides: {}
+            },
+            {
+                letter_code: 'CP',
+                series: 'CP 25/2',
+                guides: {
+                    "land-conveyance-feet-of-fines-1182-1833":"Land and property ownership: conveyances by feet of fines 1182-1833",
+                    "enrolment-of-deeds-registration-of-titles-land":"Land and property ownership: enrolment and registration of title 1227-c1930"
+                }
+            },
+            {
+                letter_code: 'CP',
+                series: 'CP 25/1',
+                guides: {
+                    "general-eyres-1194-1348":"General eyres 1194-1348",
+                    "enrolment-of-deeds-registration-of-titles-land":"Land and property ownership: enrolment and registration of title 1227-c1930"
+                }
+            },
+            {
+                letter_code: 'IR',
+                series: 'IR 121/1',
+                guides: {
+                    "valuation-office-survey-land-value-ownership-1910-1915":"Land use, value and ownership: Valuation Office Survey 1910-1915",
+                    "maps-further-research":"Maps: further research",
+                    "ordnance-survey":"Ordnance Survey"
+                }
+            },
+            {
+                letter_code: 'PRO',
+                series: 'PRO 31/8',
+                guides: {
+                    "foreign-affairs-before-1509":"Foreign affairs before 1509",
+                    "state-papers-ireland-1509-1782":"State Papers Ireland 1509-1782"
+                }
             }
         ];
 

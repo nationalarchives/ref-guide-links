@@ -1,10 +1,11 @@
 module.exports = extract_fragments_from_legacy_sub_class_series = (reference) => {
 
-    // TODO: This is just a stub. The actual functionality needs to be returned;
+    let letter_code_match = reference.match(/^(\w*)(\s)?/);
+    let series_match = reference.match(/(\w+\s\d+\/\d+)/);
 
     return {
-        letter_code: '',
-        series: '',
-        reference: ''
+        letter_code: (Array.isArray(letter_code_match)) ? letter_code_match[1] : false,
+        series: (Array.isArray(series_match)) ? series_match[1] : false,
+        reference: reference
     }
 }

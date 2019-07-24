@@ -62,6 +62,22 @@ describe('It should return the correct guides', function () {
                 series: 'LEV 1',
                 reference: 'LEV 1/1',
                 guides: {}
+            },
+            {
+                letter_code: 'CP',
+                series: 'CP 25/1',
+                reference: 'CP 25/1/284/18',
+                guides: {
+                    "court-kings-bench-records-1200-1600": "Court of King's Bench records 1200-1702"
+                }
+            },
+            {
+                letter_code: 'PRO',
+                series: 'PRO 31/8',
+                reference: 'PRO 31/8/140B',
+                guides: {
+                    "religious-houses-lands-1000-1530": "Religious houses and their lands c.1000-1530"
+                }
             }
         ];
 
